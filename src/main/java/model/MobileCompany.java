@@ -1,6 +1,5 @@
 package model;
 
-import model.rate.MobileRate;
 import model.rate.Rate;
 
 /*12. Мобильная связь. Определить иерархию тарифов мобильной компании.
