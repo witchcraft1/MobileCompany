@@ -1,6 +1,7 @@
 package model;
 
 import model.rate.Rate;
+import model.rate.RoamingRate;
 
 /*12. Мобильная связь. Определить иерархию тарифов мобильной компании.
             Создать список тарифов компании.
@@ -18,11 +19,21 @@ public class MobileCompany {
         rate = new Rate[4];
     }
 
-    public Rate[] sortRateByPayment(){
+    public enum Tariffs{
+        Smart(new RoamingRate(4000, 1000, 100, 500)),
+        SmartMax(new RoamingRate(6000, 1500, 150, 750));
+
+        private RoamingRate rr;
+        Tariffs(RoamingRate rr){
+            this.rr = rr;
+        }
+    }
+
+    /*public Rate[] sortRateByPayment(){
 
     }
 
     public Rate searchRateWith(){
 
-    }
+    }*/
 }
