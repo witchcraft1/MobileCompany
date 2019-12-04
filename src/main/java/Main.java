@@ -1,6 +1,8 @@
 import controller.Controller;
 import model.MobileCompany;
+import model.Model;
 import view.View;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class Main {
              Провести сортировку тарифов на основе размера абонентской платы.
              Найти тариф в компании, соответствующий заданному диапазону параметров.
             */
-        Controller controller = new Controller(new MobileCompany(),new View());
+        Controller controller = new Controller(new Model(),new View());
         controller.processUser();
     }
 }
