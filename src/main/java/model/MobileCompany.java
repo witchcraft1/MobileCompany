@@ -3,11 +3,8 @@ package model;
 import model.rate.InternetRate;
 import model.rate.NetworkRate;
 import model.rate.Rate;
-import model.rate.RoamingRate;
-
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 
 /*12. Мобильная связь. Определить иерархию тарифов мобильной компании.
@@ -17,7 +14,6 @@ import java.util.Comparator;
              Найти тариф в компании, соответствующий заданному диапазону параметров.
  */
 public class MobileCompany {
-  //  private int client_count = 0;
     private String companyName;
     private ArrayList<Rate> rates;
     MobileCompany(ArrayList<Rate> rates){
@@ -49,17 +45,30 @@ public class MobileCompany {
             rates.add(rateFromEnum);
         }
     }
-
-    public ArrayList<Rate> getRates(){
+   /* public ArrayList<Rate> getRates(){
         return this.rates;
     }
+
     public void showInfo(){
         System.out.println("Company name - " + companyName);
         for (int i = 0; i < rates.size(); i++) {
             System.out.println(i + 1 + ". " + rates.get(i) );
         }
         System.out.println();
+    }*/
+    public String returnInfo(){
+        return "\n%s - " + companyName;
     }
+
+    public String[] returnRatesInfo(){
+        String[] str = new String[rates.size()];
+        for (int i = 0; i < rates.size(); i++) {
+            str[i] = i + 1 + ". " + rates.get(i);
+        }
+        return str;
+    }
+
+
     public void addRate(Rate ...newRates){
         outside:for (Rate newRate:newRates) {
             for (Rate rate:rates) {
@@ -87,7 +96,7 @@ public class MobileCompany {
         //return ratesClone;
     }
 
-    public ArrayList<InternetRate> sortRateByInternet(){
+    /*public ArrayList<InternetRate> sortRateByInternet(){
         ArrayList<InternetRate> alrate = new ArrayList<>();
         for (Rate rate:rates) {
             if(rate.getClass() == InternetRate.class){
@@ -98,10 +107,10 @@ public class MobileCompany {
         return alrate;
        // InternetRate ir = (InternetRate) rates.get(0);
        // Rate rr = new InternetRate(3,4,"5",5);
-    }
+    }*/
 
-    //Map<Integer, String>
-    public Rate searchRateWith(int ...parameters){
+
+   /* public Rate searchRateWith(int ...parameters){
         return new InternetRate(1,1,"Smart", 2);
-    }
+    }*/
 }

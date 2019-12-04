@@ -4,7 +4,6 @@ public class InternetRate extends Rate{
     private int internetMB;
     private int callsWithinNetwork = 0;
     private int callsOutOfNetwork = 0;
-
     public InternetRate( int sms, int clientCount, String name, int internetMB) {
         super(sms, clientCount, name);
         this.internetMB = internetMB;
@@ -32,9 +31,9 @@ public class InternetRate extends Rate{
     @Override
     public String toString(){
         StringBuilder string = new StringBuilder(super.toString());
-        string.append(", internet MBs: ").append(internetMB)
-                .append(callsWithinNetwork == 0 ? "" : ", minutes within network: " + callsWithinNetwork)
-                .append(callsOutOfNetwork == 0 ? "" : ", minutes to other networks: " + callsOutOfNetwork);
+        string.append(", %s: ").append(internetMB)
+                .append(", %s: ").append(callsWithinNetwork)
+                .append(", %s: ").append(callsOutOfNetwork);
         return string.toString();
     }
 }

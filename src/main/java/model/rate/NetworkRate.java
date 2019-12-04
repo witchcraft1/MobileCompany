@@ -26,9 +26,9 @@ public class NetworkRate extends Rate{
     @Override
     public String toString(){
         StringBuilder string = new StringBuilder(super.toString());
-        string.append(internetMB == 0 ? "" : ", internet MBs: " + internetMB)
-                .append(", minutes within network: ").append(callsWithinNetwork)
-                .append(", minutes to other networks: ").append(callsOutOfNetwork);
+        string.append(", %s: ").append(internetMB)
+                .append(", %s: ").append(callsWithinNetwork)
+                .append(", %s: ").append(callsOutOfNetwork);
         return string.toString();
     }
 }

@@ -20,9 +20,10 @@ public class Controller {
        // MobileCompany lifecell = new MobileCompany("Lifecell");
         kyivstar.addRate(new InternetRate(2,3,"Smart++",5));
         kyivstar.addRate(new NetworkRate(75,100200, "Dd", 44,44));
-        System.out.println(kyivstar.calculateClientCount());
-        kyivstar.showInfo();//System.out.println(kyivstar.getRates());
+
+        View.print(String.valueOf(kyivstar.calculateClientCount()));
+        View.showCompanyInfo(kyivstar.returnInfo(), kyivstar.returnRatesInfo());//kyivstar.showInfo();//System.out.println(kyivstar.getRates());
         kyivstar.sortRateByPayment();
-        kyivstar.showInfo();//System.out.println(kyivstar.getRates());
+        View.showCompanyInfo(kyivstar.returnInfo(),kyivstar.returnRatesInfo());    // kyivstar.showInfo();//System.out.println(kyivstar.getRates());
     }
 }
