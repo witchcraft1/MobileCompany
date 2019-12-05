@@ -9,4 +9,6 @@ public interface Constants {
     String INTERNET_MB = "output.internetMB";
     String MINUTES_WITHIN_NETWORK = "output.minutes.within.network";
     String MINUTES_TO_OTHER_NETWORK = "output.minutes.to.other.networks";
+    String RATE_WAS_ADDED = "output.rate.added";
+    String RATE_WAS_NOT_ADDED = "output.rate.not.added";
 }

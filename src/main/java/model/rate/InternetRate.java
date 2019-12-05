@@ -30,10 +30,8 @@ public class InternetRate extends Rate{
 
     @Override
     public String toString(){
-        StringBuilder string = new StringBuilder(super.toString());
-        string.append(", %s: ").append(internetMB)
-                .append(", %s: ").append(callsWithinNetwork)
-                .append(", %s: ").append(callsOutOfNetwork);
-        return string.toString();
+        return super.toString() + ", %s: " + internetMB +
+                ", %s: " + callsWithinNetwork +
+                ", %s: " + callsOutOfNetwork;
     }
 }

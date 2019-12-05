@@ -48,6 +48,10 @@ public abstract class Rate implements RateMultipliers {
         this.clientCount = clientCount;
     }
 
+    public boolean hasClientCountInRange(int min,int max){
+        return this.clientCount > min && this.clientCount < max;
+    }
+
     @Override
     public String toString(){
         return "%s -- " + name + ":\n %s: " + costPerMonth + ", %s: " + sms + ", %s: " + clientCount ;

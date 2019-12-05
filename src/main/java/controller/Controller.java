@@ -4,7 +4,6 @@ import model.MobileCompany;
 import model.Model;
 import model.rate.InternetRate;
 import model.rate.NetworkRate;
-import model.rate.Rate;
 import view.View;
 
 public class Controller {
@@ -18,12 +17,17 @@ public class Controller {
     public void processUser(){
         MobileCompany kyivstar = new MobileCompany("Kyivstar");
        // MobileCompany lifecell = new MobileCompany("Lifecell");
-        kyivstar.addRate(new InternetRate(2,3,"Smart++",5));
-        kyivstar.addRate(new NetworkRate(75,100200, "Dd", 44,44));
+        view.showInfoAboutAddedRates(kyivstar.addRateAndGetInfo(new InternetRate(2,3,"Smart++",5),
+                new NetworkRate(75,100200, "Dd", 44,44),
+                new NetworkRate(500,5200, "Network++", 20000,1000)));
 
-        View.print(String.valueOf(kyivstar.calculateClientCount()));
-        View.showCompanyInfo(kyivstar.returnInfo(), kyivstar.returnRatesInfo());//kyivstar.showInfo();//System.out.println(kyivstar.getRates());
+        view.print(String.valueOf(kyivstar.calculateClientCount()));
+        view.showCompanyInfo(kyivstar.returnInfo(), kyivstar.returnRatesInfo(kyivstar.getRates()));
+
         kyivstar.sortRateByPayment();
-        View.showCompanyInfo(kyivstar.returnInfo(),kyivstar.returnRatesInfo());    // kyivstar.showInfo();//System.out.println(kyivstar.getRates());
+        view.showCompanyInfo(kyivstar.returnInfo(),kyivstar.returnRatesInfo(kyivstar.getRates()));
+
+        view.showCompanyInfo(kyivstar.returnInfo(),
+                kyivstar.returnRatesInfo(kyivstar.searchRateByClientCountRange(400,6000)));
     }
 }

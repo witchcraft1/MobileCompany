@@ -1,11 +1,14 @@
 package model;
 
+
 public enum Tariffs {
     NetworkTariff1(100,10000,"Dd",3000,100),
     InternetTariff1(50,320,"Smart++",6000),
     InternetTariff2(0, 500, "WebAccess", 10000),
     NetworkTariff2(300, 5400, "Network+", 10000, 300);
-
+    enum Type{
+        Network, Internet;
+    }
     private String type;
     private int costPerMonth;
     private int sms;
